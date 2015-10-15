@@ -1,0 +1,28 @@
+
+$(".button.success.small").click(function() {
+$("<%= j(@items.to_s) %>").replaceWith("<%= j(@bid.amount.to_s) %>");
+});
+
+
+$.ajax({
+  url: "show",
+  dataType: "script",
+  success: alert()
+});
+
+
+
+//
+// $(".button.success.small").click(function() {
+//
+//     $.ajax({
+//            type: "POST",
+//            url: "http://localhost:3000/items/1",
+//            data: $("#bid_amount").serialize(),
+//            success: function(data)
+//            {
+//                alert(data); // show response from the php script.
+//            }
+//          });
+//     return false; // avoid to execute the actual submit of the form.
+// });

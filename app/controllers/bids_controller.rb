@@ -1,14 +1,15 @@
 class BidsController < ApplicationController
 
+
   def create
     @bid = Bid.new(bid_params)
 
     if @bid.save
-      #render partial instead of redirect
-      render partial: 'your_bid' locals: ()
-    else
-      @item = @bid.item
-      render "items/show"
+  #     #render partial instead of redirect
+      # redirect_to @bid.item, notice: 'Your bid has been recorded!'
+  # #   else
+  # #     @item = @bid.item
+  # #     render "items/show"
     end
   end
 
