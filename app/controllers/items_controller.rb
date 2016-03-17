@@ -6,6 +6,11 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def refresh
+    @item = Item.find(params[:bid][:item_id])
+    @bid = Bid.new(item: @item, amount: @item.next_bid_amount)
+    render "bids/create"
+  end
   # GET /items/1
   def show
     @bid = Bid.new(item: @item, amount: @item.next_bid_amount)

@@ -5,14 +5,6 @@ class BidsController < ApplicationController
     Bid.create!(bid_params)
     @item = Item.find(params[:bid][:item_id])
     @bid = Bid.new(item: @item, amount: @item.next_bid_amount)
-
-    # if @bid.save
-  #     #render partial instead of redirect
-      # redirect_to @bid.item, notice: 'Your bid has been recorded!'
-  # #   else
-  # #     @item = @bid.item
-  # #     render "items/show"
-    # end
   end
 
 

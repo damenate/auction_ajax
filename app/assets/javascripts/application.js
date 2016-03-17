@@ -17,15 +17,26 @@
 //= require_tree .
 
 function ajaxCall() {
-  response = $.ajax({
-    url: "/refresh/"
-  });
-}
-
-
-$(function(){
-  if ($("#bid-refresh").length > 0){
-    window.setInterval('ajaxCall()', 15000);
+     $.get('/refresh/', function(data)
+     {
+         $('#highest-bid').html(data);
+     });
   }
-  $(document).foundation();
+$(document).ready(function($){
+  window.setInterval('ajaxCall()', 10*150000);
 });
+
+
+//
+// function ajaxCall( {
+//   response = $.ajax({
+//     url: "/refresh/",
+//   })
+// })
+//
+// function() {
+//   if ($("#highest-bid").length > 0) {
+//     window.SetInterval('ajaxCall()', 15000);
+// }
+//   $(document).foundation();
+// });
