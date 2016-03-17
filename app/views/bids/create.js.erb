@@ -1,5 +1,3 @@
 console.log("Working?!!")
 
-$(".button.success.small").click(function() {
-$("<%= j(@bid.amount.to_s) %>");
-});
+$("#bid-form").html("<%= j(render partial: 'items/your_bid') %>");

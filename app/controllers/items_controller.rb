@@ -20,6 +20,12 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def refresh
+    @item = Item.find(params[:id])
+    @bid = Bid.new(item: @item, amount: @item.next_bid_amount)
+    render "bids/create"
+  end
+
   # POST /items
   def create
     @item = Item.new(item_params)

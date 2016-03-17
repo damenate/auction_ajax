@@ -26,3 +26,6 @@ $.ajax({
 //          });
 //     return false; // avoid to execute the actual submit of the form.
 // });
+
+
+$("div.row.collapse").first().html("<%= j(render partial: 'items/your_bid', locals: (item: @itme)) %>")
