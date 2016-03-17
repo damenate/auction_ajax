@@ -17,13 +17,14 @@
 //= require_tree .
 
 function ajaxCall() {
-     $.get('/refresh/', function(data)
+      var itemId = $("#bid_item_id")
+     $.get('/refresh/itemId', function(data)
      {
          $('#highest-bid').html(data);
      });
   }
 $(document).ready(function($){
-  window.setInterval('ajaxCall()', 10*150000);
+  window.setInterval('ajaxCall()', 10*1500);
 });
 
 
