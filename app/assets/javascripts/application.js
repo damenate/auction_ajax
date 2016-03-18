@@ -16,17 +16,33 @@
 //= require turbolinks
 //= require_tree .
 
-function ajaxCall() {
-      var itemId = $("#bid_item_id").attr("value")
-     $.get(itemId, function(data)
-     {
-         $('#highest-bid').html(data);
-     });
-  }
-$(document).ready(function($){
-  window.setInterval('ajaxCall()', 10*1500);
-});
+// $(document).foundation();
+//
+// function ajaxCall() {
+//      $.get('/refresh/show/' + itemId , function(data)
+//      {
+//          $('#highest-bid').html(data);
+//      });
+//   }
+$(function(){ $(document).foundation(); });
 
+//
+// $(document).ready(
+//   function(){
+//     window.setInterval() function(){
+//       var itemId = $("#bid_item_id").attr("value")
+//       $('.bid-form').load('/refresh/',  + itemId});
+//     ), 10*1500);
+// };
+
+
+$(document).ready(
+  function() {
+   setInterval(function() {
+     var itemId = $("#bid_item_id").attr("value")
+     $('.bid-form').load('/items/refresh', {'item_id': itemId });
+ }, 15000);
+});
 
 //
 // function ajaxCall( {
