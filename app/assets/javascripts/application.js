@@ -17,8 +17,8 @@
 //= require_tree .
 
 function ajaxCall() {
-      var itemId = $("#bid_item_id")
-     $.get('/refresh/itemId', function(data)
+      var itemId = $("#bid_item_id").attr("value")
+     $.get('/refresh/' + itemId, function(data)
      {
          $('#highest-bid').html(data);
      });
