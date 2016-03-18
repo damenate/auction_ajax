@@ -18,7 +18,7 @@
 
 function ajaxCall() {
       var itemId = $("#bid_item_id").attr("value")
-     $.get('/refresh/' + itemId, function(data)
+     $.get(itemId, function(data)
      {
          $('#highest-bid').html(data);
      });
