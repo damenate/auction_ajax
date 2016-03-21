@@ -34,16 +34,22 @@ $(function(){ $(document).foundation(); });
 //       $('.bid-form').load('/refresh/',  + itemId});
 //     ), 10*1500);
 // };
+//
+//
+// $(document).ready(
+//   function() {
+//    setInterval(function() {
+//      var itemId = $("#bid_item_id").attr("value")
+//      $('.bid-form').load('/items/refresh', {'item_id': itemId });
+//  }, 15000);
+// });
 
 
-$(document).ready(
-  function() {
-   setInterval(function() {
-     var itemId = $("#bid_item_id").attr("value")
-     $('.bid-form').load('/items/refresh', {'item_id': itemId });
- }, 15000);
-});
+function update(){
+  $("#highest-bid").load(location.href + "highest-bid");
+};
 
+setInterval(update, 15000)
 //
 // function ajaxCall( {
 //   response = $.ajax({
