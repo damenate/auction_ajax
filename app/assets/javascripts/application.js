@@ -30,7 +30,7 @@ $(function(){ $(document).foundation(); });
 // $(document).ready(
 //   function(){
 //     window.setInterval() function(){
-//       var itemId = $("#bid_item_id").attr("value")
+//       var itemId = $("#bid_item_id").val()
 //       $('.bid-form').load('/refresh/',  + itemId});
 //     ), 10*1500);
 // };
@@ -46,7 +46,7 @@ $(function(){ $(document).foundation(); });
 
 
 function update(){
-  $("#highest-bid").load(location.href + "highest-bid");
+  $("form").load(location.href + "form");
 };
 
 setInterval(update, 15000)
